@@ -1,0 +1,1 @@
+Simple browser form with various text inputs in order to practice using live inline validation.
