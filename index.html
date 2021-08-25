@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <form>
+        <form id='myform' novalidate>
             <label for='email'>Email:</label>
-            <input type='text' id='email' name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
+            <input type='text' id='email' name='email'><br>
             <label for='country'>Country:</label>
             <input type='text' id='country' name='country'><br>
             <label for='zip'>Zip Code:</label>
@@ -17,7 +17,7 @@
             <input type='text' id='password' name='password'><br>
             <label for='confirm-pass'>Confirm Password:</label>
             <input type='text' name='confirm-pass'><br>
-            <input type='submit' id='confirm-password' value='Submit'> 
+            <input type='submit' id='confirm-password' value='Submit' onsubmit="validEmail(e)"> 
         </form>
         <script src="index.js" async defer></script>
     </body>
