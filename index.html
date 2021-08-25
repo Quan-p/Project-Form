@@ -7,18 +7,30 @@
     </head>
     <body>
         <form id='myform' novalidate>
-            <label for='email'>Email:</label>
-            <input type='text' id='email' name='email'><br>
-            <label for='country'>Country:</label>
-            <input type='text' id='country' name='country'><br>
-            <label for='zip'>Zip Code:</label>
-            <input type='text' id='zip' name='zip'><br>
-            <label for='password'>Password:</label>
-            <input type='text' id='password' name='password'><br>
-            <label for='confirm-pass'>Confirm Password:</label>
-            <input type='text' name='confirm-pass'><br>
-            <input type='submit' id='confirm-password' value='Submit' onsubmit="validEmail(e)"> 
+            <label for='email'>
+                <span>Email:</span>
+                <input type='email' id='email' name='email' required>
+                <span class="error" aria-live="polite"></span>
+            </label><br>
+            <label for='country'>
+                <span>Country:</span>
+                <input type='text' id='country' name='country'>
+            </label><br>
+            <label for='zip'>
+                <span>Zip Code:</span>
+                <input type='text' id='zip' name='zip'>
+            </label><br>
+            <label for='password'>
+                <span>Password:</span>
+                <input type='text' id='password' name='password'>
+            </label><br>
+            <label for='confirm-pass'>
+                <span>Confirm Password:</span>
+                <input type='text' id='confirm-password' name='confirm-pass'>
+            </label><br>
+            
+            <input type='submit' value='Submit'> 
         </form>
-        <script src="index.js" async defer></script>
+        <script src="script.js"></script>
     </body>
 </html>
