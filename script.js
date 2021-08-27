@@ -17,3 +17,21 @@ email.addEventListener('input', (event) => {
         validEmail();
     }
 });
+
+const country = document.getElementById('country');
+const countryError = document.querySelector('#country + span.error');
+
+function validCountry() {
+    if (email.validity.valueMissing) {
+        emailError.textContent = 'You need to enter a country';
+    }
+}
+
+country.addEventListener('input', (event) => {
+    if (email.validity.valid) {
+        countryError.textContent = '';
+        countryError.className = 'error';
+    } else {
+        validCountry();
+    }
+});
