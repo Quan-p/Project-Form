@@ -12,8 +12,6 @@ form.addEventListener('submit', (event) => {
 
 const isRequired = (value) => (value !== '');
 
-const lengthReq = (length, min, max) => (!(length < min || length > max));
-
 function emailValid(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
@@ -109,9 +107,17 @@ const checkPassword = () => {
 
 const checkConfirmPassword = () => {
     let valid = false;
-    
+
     const confirmPassword = confirmPasswordEl.value.trim();
     const password = passwordEl.value.trim();
 
-
-}
+    if (!isRequired(confirmPassword)) {
+        showError(confirmPasswordEl, 'Please enter the password again');
+    } else if (password !== confirmPassword) {
+        showError(confirmPasswordEl, 'Passwords do not match');
+    } else {
+        showSuccess(confirmPasswordEl);
+        valid = true;
+    }
+    return valid;
+};
