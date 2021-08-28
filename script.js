@@ -91,3 +91,27 @@ const checkZip = () => {
     }
     return valid;
 };
+
+const checkPassword = () => {
+    let valid = false;
+    const password = passwordEl.valuee.trim();
+
+    if (!isRequired(password)) {
+        showError(passwordEl, 'Password cannot be blank');
+    } else if (!passwordValid) {
+        showError(passwordEl, 'Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)');
+    } else {
+        showSuccess(passwordEl);
+        valid = true;
+    }
+    return valid;
+};
+
+const checkConfirmPassword = () => {
+    let valid = false;
+    
+    const confirmPassword = confirmPasswordEl.value.trim();
+    const password = passwordEl.value.trim();
+
+
+}
