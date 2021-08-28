@@ -1,8 +1,8 @@
-const email = document.getElementById('email');
-const country = document.getElementById('country');
-const zipCode = document.getElementById('zip');
-const password = document.getElementById('password');
-const confirmPassword = document.getElementById('confirm-password');
+const emailEl = document.getElementById('email');
+const countryEl = document.getElementById('country');
+const zipCodeEl = document.getElementById('zip');
+const passwordEl = document.getElementById('password');
+const confirmPasswordEl = document.getElementById('confirm-password');
 
 const form = document.getElementById('myForm');
 
@@ -51,13 +51,29 @@ function showSuccess(input) {
 
 const checkCountry = () => {
     let valid = false;
-    const country = country.value.trim();
+    const country = countryEl.value.trim();
 
     if (!isRequired(country)) {
-        showError(country, 'Country cannot be blank');
+        showError(countryEl, 'Country cannot be blank');  
     } else {
-        showSuccess(country);
+        showSuccess(countryEl);
         valid = true;
     }
     return valid;
-}
+};
+
+const checkEmail = () => {
+    let valid = false;
+    const email = emailEl.value.trim();
+
+    if (!isRequired(email)) {
+        showError(emailEl, 'Email cannot be blank');
+    } else if (!emailValid) {
+        showError(countryEl, 'Email is not valid');
+    } else {
+        showSuccess(countryEl);
+        valid = true;
+    }
+    return valid;
+};
+
