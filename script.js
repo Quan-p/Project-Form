@@ -54,7 +54,7 @@ const checkCountry = () => {
     const country = countryEl.value.trim();
 
     if (!isRequired(country)) {
-        showError(countryEl, 'Country cannot be blank');  
+        showError(countryEl, 'Country cannot be blank');
     } else {
         showSuccess(countryEl);
         valid = true;
@@ -77,3 +77,17 @@ const checkEmail = () => {
     return valid;
 };
 
+const checkZip = () => {
+    let valid = false;
+    const zipCode = zipEl.value.trim();
+
+    if (!isRequired(zipCode)) {
+        showError(zipCodeEl, 'Zip code cannot be blank');
+    } else if (!zipValid) {
+        showError(zipCodeEl, 'Zip code is not valid');
+    } else {
+        showSuccess(zipCodeEl);
+        valid = true;
+    }
+    return valid;
+};
