@@ -43,3 +43,16 @@ function showSuccess(input) {
     const error = formField.querySelector('span');
     error.textContent = '';
 }
+
+const checkCountry = () => {
+    let valid = false;
+    const country = country.value.trim();
+
+    if (!isRequired(country)) {
+        showError(country, 'Country cannot be blank');
+    } else {
+        showSuccess(country);
+        valid = true;
+    }
+    return valid;
+}
