@@ -13,9 +13,3 @@ form.addEventListener('submit', (event) => {
 const isRequired = (value) => (value !== '');
 
 const lengthReq = (length, min, max) => (!(length < min || length > max));
-
-if (lengthReq) {
-    console.log('true');
-} else {
-    console.log('false');
-}
