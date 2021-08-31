@@ -3,7 +3,7 @@
 /* eslint-disable no-alert */
 const emailEl = document.getElementById('email');
 const countryEl = document.getElementById('country');
-const zipCodeEl = document.querySelector('#zip');
+const zipCodeEl = document.getElementById('zipCode');
 const passwordEl = document.getElementById('password');
 const confirmPasswordEl = document.getElementById('confirm-password');
 
@@ -21,7 +21,7 @@ function emailValid(email) {
 }
 
 function zipValid(zipCode) {
-    const re = new RegExp('^\\d+$');
+    const re = /^\d{5}(-\d{4})?(?!-)$/;
     return re.test(zipCode);
 }
 
