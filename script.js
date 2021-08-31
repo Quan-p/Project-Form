@@ -1,6 +1,7 @@
+/* eslint-disable no-alert */
 const emailEl = document.getElementById('email');
 const countryEl = document.getElementById('country');
-const zipCodeEl = document.getElementById('zip');
+const zipCodeEl = document.querySelector('#zip');
 const passwordEl = document.getElementById('password');
 const confirmPasswordEl = document.getElementById('confirm-password');
 
@@ -66,7 +67,7 @@ const checkEmail = () => {
 
     if (!isRequired(email)) {
         showError(emailEl, 'Email cannot be blank');
-    } else if (!emailValid) {
+    } else if (!emailValid(email)) {
         showError(countryEl, 'Email is not valid');
     } else {
         showSuccess(countryEl);
@@ -81,7 +82,7 @@ const checkZip = () => {
 
     if (!isRequired(zipCode)) {
         showError(zipCodeEl, 'Zip code cannot be blank');
-    } else if (!zipValid) {
+    } else if (!zipValid(zipCode)) {
         showError(zipCodeEl, 'Zip code is not valid');
     } else {
         showSuccess(zipCodeEl);
@@ -96,7 +97,7 @@ const checkPassword = () => {
 
     if (!isRequired(password)) {
         showError(passwordEl, 'Password cannot be blank');
-    } else if (!passwordValid) {
+    } else if (!passwordValid(password)) {
         showError(passwordEl, 'Password must have at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)');
     } else {
         showSuccess(passwordEl);
@@ -138,6 +139,6 @@ form.addEventListener('submit', (e) => {
         && confirmPasswordValid;
 
     if (isFormValid) {
-    
+        alert('High Five!!!');
     }
 });
