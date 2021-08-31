@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable default-case */
 /* eslint-disable no-alert */
 const emailEl = document.getElementById('email');
 const countryEl = document.getElementById('country');
@@ -140,5 +142,25 @@ form.addEventListener('submit', (e) => {
 
     if (isFormValid) {
         alert('High Five!!!');
+    }
+});
+
+form.addEventListener('input', (e) => {
+    switch (e.target.id) {
+        case 'email':
+            checkEmail();
+            break;
+        case 'country':
+            checkCountry();
+            break;
+        case 'zipCode':
+            checkZip();
+            break;
+        case 'password':
+            checkPassword();
+            break;
+        case 'confirm-password':
+            checkConfirmPassword();
+            break;
     }
 });
