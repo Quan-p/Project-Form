@@ -68,9 +68,9 @@ const checkEmail = () => {
     if (!isRequired(email)) {
         showError(emailEl, 'Email cannot be blank');
     } else if (!emailValid(email)) {
-        showError(countryEl, 'Email is not valid');
+        showError(emailEl, 'Email is not valid');
     } else {
-        showSuccess(countryEl);
+        showSuccess(emailEl);
         valid = true;
     }
     return valid;
