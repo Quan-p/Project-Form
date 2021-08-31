@@ -77,7 +77,7 @@ const checkEmail = () => {
 
 const checkZip = () => {
     let valid = false;
-    const zipCode = zipEl.value.trim();
+    const zipCode = zipCodeEl.value.trim();
 
     if (!isRequired(zipCode)) {
         showError(zipCodeEl, 'Zip code cannot be blank');
@@ -92,7 +92,7 @@ const checkZip = () => {
 
 const checkPassword = () => {
     let valid = false;
-    const password = passwordEl.valuee.trim();
+    const password = passwordEl.value.trim();
 
     if (!isRequired(password)) {
         showError(passwordEl, 'Password cannot be blank');
@@ -121,3 +121,23 @@ const checkConfirmPassword = () => {
     }
     return valid;
 };
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const isEmailValid = checkEmail();
+    const isCountryValid = checkCountry();
+    const isZipCodeValid = checkZip();
+    const isPasswordValid = checkPassword();
+    const confirmPasswordValid = checkConfirmPassword();
+
+    const isFormValid = isEmailValid
+        && isCountryValid
+        && isZipCodeValid
+        && isPasswordValid
+        && confirmPasswordValid;
+
+    if (isFormValid) {
+    
+    }
+});
